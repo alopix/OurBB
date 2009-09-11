@@ -22,15 +22,6 @@ class MySQLException extends Exception
 	{
 		return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
 	}
-	
-	/**
-	 * output a special formated message
-	 * @param MySQLException $e the Exception that should be written
-	 */
-	public function writeMessage($e)
-	{
-		var_dump($e->getMessage());
-	}
 }
 
 
@@ -73,7 +64,7 @@ class MySQL
 				throw new MySQLException(mysql_error($this->connectionLink), mysql_errno($this->connectionLink)); // Could not select MySQL-database
 			}
 		} catch (MySQLException $e) {
-			MySQLException::writeMessage($e);
+			echo $e;
 		}
 	}
 	
@@ -88,7 +79,7 @@ class MySQL
 				throw new MySQLException(mysql_error($this->connectionLink), mysql_errno($this->connectionLink)); // Could not close connection to MySQL
 			}
 		} catch (MySQLException $e) {
-			MySQLException::writeMessage($e);
+			echo $e;
 		}
 	}
 	
@@ -109,7 +100,7 @@ class MySQL
 				throw new MySQLException(mysql_error($this->connectionLink), mysql_errno($this->connectionLink)); // Could not send query
 			}
 		} catch (MySQLException $e) {
-			MySQLException::writeMessage($e);
+			echo $e;
 		}
 		
 		$this->queryCount++;
