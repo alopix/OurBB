@@ -123,13 +123,23 @@ class MySQL
 	}
 	
 	/**
-	 * return the MySQL-result-data as an array
+	 * return the MySQL-result-data as an assoc array
 	 * @param resource $result the MySQL-result of the query
 	 * @return array
 	 */
 	public function fetchArray($result)
 	{
 		return mysql_fetch_array($result);
+	}
+	
+	/**
+	 * return the MySQL-result-data as an assoc array
+	 * @param resource $result the MySQL-result of the query
+	 * @return array
+	 */
+	public function fetchAssoc($result)
+	{
+		return mysql_fetch_assoc($result);
 	}
 	
 	/**
