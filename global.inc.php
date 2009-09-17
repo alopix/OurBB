@@ -30,7 +30,7 @@ require('lib/Template.class.php');
 //TODO: create object
 
 // include the global functions that are needed
-require("./lib/functions.php");
+require("lib/functions.php");
 
 // include the User-class and create an object to manage the users session
 require('lib/User.class.php');
