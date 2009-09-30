@@ -24,26 +24,13 @@ class MySQLException extends Exception
 	}
 }
 
+require('includes/dbal.class.php');
 
 /**
  * this class handles the MySQL-connection
  */
-class MySQL
+class mysql extends dbal
 {
-	/**
-	 * holds the connection to the database
-	 * @access protected
-	 * @var resource
-	 */
-	protected $connectionLink = NULL;
-	
-	/**
-	 * the counter for the mysql-query
-	 * @access private
-	 * @var integer
-	 */
-	private $queryCount = 0;
-	
 	/**
 	 * creates a link to the MySQL-Database
 	 * @param string $sqlHost the hostname of the mysql-server

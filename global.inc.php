@@ -17,9 +17,10 @@ session_name('OurBB');
 require('config.inc.php');
 
 // include MySQL-class and create an object
-require('lib/MySQL.class.php');
-$db = new MySQL($sqlHost, $sqlUser, $sqlPassword, $sqlDB);
-unset($sqlHost, $sqlUser, $sqpPassword);
+require('lib/db/' . strtolower($dbms) . '.class.php');
+$db = new $sqlDbms($sqlHost, $sqlUser, $sqlPassword, $sqlDB);
+// unset the sql-login-data for safety purposes
+unset($sqlHost, $sqlUser, $sqlPassword);
 define('DB_PREFIX', $dbPrefix);
 
 // include the options

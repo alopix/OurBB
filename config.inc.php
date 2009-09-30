@@ -9,6 +9,8 @@
  *  Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
  */
 
+// the database management system to use; currently supported: mysql
+$dbms = 'mysql';
 // the hostname of the mysql-server
 $sqlHost = "localhost";
 // the username and password to log into your database
